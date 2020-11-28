@@ -1,0 +1,54 @@
+<p>employee-list</p>
+
+<table *ngIf="isWeb; else otherTemplate" >
+    <thead>
+        <tr>
+            <th>Even</th>
+            <th>Odd</th>
+            <th>Index</th>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                DOB
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                salary
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody> 
+        <tr  [ngClass]=" e ? 'even':'odd' "  *ngFor="let empdetail of empList; let i=index;let e=even; let o=odd;trackBy:trackByFun">
+            <td>{{i+1}}</td>
+            <td>{{e}}</td>
+            <td>{{o}}</td>
+            <td cedifyMydirective>{{empdetail.id}}</td>
+            <td  cedifyMydirective [innerText]="empdetail.name"></td>
+            <td cedifyMydirective>{{empdetail.age}}</td>
+            <td cedifyMydirective>{{empdetail.dob}}</td>
+            <td cedifyMydirective>{{empdetail.email}}</td>
+            <td cedifyMydirective>{{empdetail.salary}}</td>
+            <td class="btn btn-success" (click)="SendDataToParent(empdetail)">Senddata</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<ng-template #otherTemplate>
+    <div *ngFor="let emp of empList"> 
+        <span>{{emp.name}}</span> | <span>{{emp.age}}</span> | <span>{{emp.email}}</span> | <span>{{emp.salary}}</span>
+    </div>
+</ng-template>
+
+
+<button (click)="sendData()">Send Data value</button>

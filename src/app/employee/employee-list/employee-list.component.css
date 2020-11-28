@@ -1,0 +1,18 @@
+.even{
+    background-color:greenyellow;
+    color:black;
+}
+
+.odd{
+    background-color: gray;
+    color:black;
+}
+
+
+p{
+    background-color: hotpink;
+}
+
+h1{
+    background-color: indigo;
+}

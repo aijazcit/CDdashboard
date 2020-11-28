@@ -1,0 +1,13 @@
+.even{
+    background-color:greenyellow;
+    color:black;
+}
+
+.odd{
+    background-color: gray;
+    color:black;
+}
+
+.bg-color{
+    background-color:red;
+}

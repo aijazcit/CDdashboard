@@ -1,0 +1,27 @@
+<p ngClass="bg-color">Parent employee works!</p>
+{{employee.name}}
+<!--property binding-->
+<div [innerHtml]="department"></div>
+<!--interpolation--> 
+{{employeeName}}
+{{employee.name}}
+{{employee.age}}
+{{employee.salary}}
+
+<button (click)="toggletable()">Hide Table</button>
+
+<br>
+
+{{empSelectedVal | json}}
+
+<cedify-employee-list (sendChildData)="selectedData($event)"   [empList]="childEmpData"  (childname)="sendDatavalue($event)"></cedify-employee-list>
+
+<br>
+<a [routerLink]="['/routesample',100,1]"   [queryParams]="{val1:1, val2:2, val3:'aijaz ahmad', val4:1234567890}">Bak to Sample Route</a>
+<br/>
+
+<p><button class="btn btn-success" (click)="sampleRoute()">Sample Route</button></p>
+
+
+
+
